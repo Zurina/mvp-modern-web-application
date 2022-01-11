@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use \App\Http\Controllers\WelcomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+# BOOK CONTROLLER
+Route::resource('/', 'App\Http\Controllers\WelcomeController');
