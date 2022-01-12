@@ -25,4 +25,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/map', '\App\Http\Controllers\MapController@map');
+
 require __DIR__.'/auth.php';
