@@ -13,7 +13,6 @@ class MapController extends Controller
             "chart" => array(
                 "caption" => "The international map",
                 "numbersuffix" => " student(s)",
-                "labelsepchar" => ": ",
                 "entityFillHoverColor" => "#FFF9C4",
                 "theme" => "fusion"
             )

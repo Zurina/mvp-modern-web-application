@@ -9,9 +9,7 @@
     
     </head>
     <body>
-      <x-map-layout>
-        {!! $mapConfig !!}
-      </x-map-layout>
+      <x-map-layout mapConfig={!!$mapConfig!!}/>
     </body>
 </html>
 
