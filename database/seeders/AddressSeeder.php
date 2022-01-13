@@ -16,7 +16,7 @@ class AddressSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        for($i = 0; $i < 10000; $i++) {
+        for($i = 0; $i < 500; $i++) {
             Address::create([
                 'user_id' => $faker->numberBetween(1, 10),
                 'country_id' => $faker->numberBetween(1, 244),
