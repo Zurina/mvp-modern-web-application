@@ -26,6 +26,7 @@ class MapController extends Controller
         //     ["minValue" => "50", "maxValue" => "75", "code" => "#FFC533"],
         //     ["minValue" => "75", "maxValue" => "100", "code" => "#62B58F"]
         // ));
+        // $arrMapConfig["colorRange"] = $colorDataObj;
 
         $mapDataArray = array(
             ["138", "1", "1"],
@@ -45,10 +46,8 @@ class MapController extends Controller
             array_push($mapData,array("id" => $mapDataArray[$i][0], "value" => $mapDataArray[$i][1], "showLabel" => $mapDataArray[$i][2]));
         }
 
-        // $arrMapConfig["colorRange"] = $colorDataObj;
         $arrMapConfig["data"] = $mapData;
 
-        // JSON Encode the data to retrieve the string containing the JSON representation of the data in the array.
         return view("map", ["mapConfig" => json_encode($arrMapConfig)]);
     }
 }
