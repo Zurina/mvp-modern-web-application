@@ -32,7 +32,7 @@ class MapController extends Controller
         
         $arrMapConfig["data"] = $mapData;
 
-        $studentsOfCountry = null;
+        $students = null;
         $countryName = null;
 
         if ($queryCountry) {

@@ -11,25 +11,28 @@
     <body>
       <x-map-layout mapConfig={!!$mapConfig!!}/>
 
-      <h1>{{$countryName}}</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($students as $student)
-                <tr>
-                    <td>{{ $student['id'] }}</td>
-                    <td>{{ $student['name'] }}</td>
-                    <td>{{ $student['email'] }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+      <?php if ( $countryName != null ) { ?> 
+    <h1>{{$countryName}}</h1>
+      <table>
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach($students as $student)
+              <tr>
+                  <td>{{ $student['id'] }}</td>
+                  <td>{{ $student['name'] }}</td>
+                  <td>{{ $student['email'] }}</td>
+              </tr>
+              @endforeach
+          </tbody>
+      </table>
+      <?php } ?>
+
     </body>
 </html>
 
