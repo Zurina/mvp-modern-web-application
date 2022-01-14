@@ -16,11 +16,11 @@ class AddressSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        for($i = 0; $i < 500; $i++) {
+        for($i = 1; $i < 101; $i++) {
             Address::create([
-                'user_id' => $faker->numberBetween(1, 10),
+                'user_id' => $i,
                 'country_id' => $faker->numberBetween(1, 244),
-                'current_address' => false,
+                'current_address' => true,
             ]);
         }
     }
