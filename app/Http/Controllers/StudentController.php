@@ -16,7 +16,6 @@ class StudentController extends Controller
     public function index()
     {
         $students = User::All();
-
         return view("students.index", ["students" => $students]);
 
     }
@@ -49,7 +48,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = User::with("addresses")->find($id);
+        return view("students.show", ["student" => $student]);
     }
 
     /**
