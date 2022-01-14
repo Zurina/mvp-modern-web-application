@@ -1,0 +1,183 @@
+/* ####################### NAV #######################*/
+
+.nav ul {
+    list-style: none;
+    background-color: rgb(255, 166, 0);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.nav li {
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s background-color;
+}
+
+.nav a:hover {
+    background-color: #005f5f;
+}
+
+.nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+.per-page {
+    margin: 10px 0px;
+    width: 10%;
+}
+
+/* ####################### TABLE #######################*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: rgb(247, 241, 241);
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /* background-color: #04aa6d; */
+    /* color: white; */
+}
+
+table a {
+    text-decoration: none;
+}
+
+table .a-button {
+    padding: 5px 15px;
+    background: rgb(75, 255, 99);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+table .highlight-sorting-column {
+    background: rgb(75, 255, 99);
+}
+
+table a:hover,
+table input[type="submit"] {
+    background: rgb(75, 255, 99);
+}
+
+table input[type="submit"] {
+    padding: 5px 15px;
+    background: rgb(248, 2, 2);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right;
+    color: white;
+}
+
+table form {
+    display: inline;
+}
+
+table a:hover,
+table input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+/* ####################### FORMS #######################*/
+
+.resource-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resource-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resource-form input[type="text"],
+.resource-form input[type="email"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.resource-form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.resource-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    margin: 10px;
+    padding: 5px 15px;
+    background: rgb(156, 156, 156);
+    color: white;
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    
+}
+
+.pagination .disabled {
+    pointer-events: none;
+}
+
+.pagination .active {
+    pointer-events: none;
+    background: rgb(90, 90, 90);
+}
+
+.delete-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#delete-form input[type="submit"] {
+    background-color: #ff000d;
+}
