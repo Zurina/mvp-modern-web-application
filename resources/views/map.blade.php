@@ -12,7 +12,10 @@
 
 <body>
   <x-map-layout mapConfig={!!$mapConfig!!} />
-
+  <div style="text-align: center;">
+    <a href="/students">See all students</a>
+  </div>
+  
   @if($countryName != null && $students != null)         
     <h1>{{$countryName}}</h1>
     <x-students-table :students=$students />
