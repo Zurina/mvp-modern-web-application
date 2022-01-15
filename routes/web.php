@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/temp', function () {
     return view('welcome');
 });
 
@@ -14,7 +14,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/map', '\App\Http\Controllers\MapController@map');
+Route::get('/', '\App\Http\Controllers\MapController@map');
 
 # BOOK CONTROLLER
 Route::resource('students', 'App\Http\Controllers\StudentController');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Country;
+use View;
 
 class MapController extends Controller
 {
@@ -27,7 +28,7 @@ class MapController extends Controller
         $mapData = array();
         
         for($i = 0; $i < count($mapDataArray); $i++) {
-            array_push($mapData,array("link" => "http://localhost/map?country=".$mapDataArray[$i][0], "id" => $mapDataArray[$i][0], "value" => $mapDataArray[$i][1], "showLabel" => $mapDataArray[$i][2]));
+            array_push($mapData,array("link" => "http://localhost?country=".$mapDataArray[$i][0], "id" => $mapDataArray[$i][0], "value" => $mapDataArray[$i][1], "showLabel" => $mapDataArray[$i][2]));
         }
         
         $arrMapConfig["data"] = $mapData;

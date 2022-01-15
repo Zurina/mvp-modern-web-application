@@ -223,7 +223,7 @@
             return $this->stringData;
         }
     }
-    $Map = new FusionCharts("maps/worldwithcountries", "MyFirstMap" , "1400", "860", "map-container", "json", (string) $mapConfig);
+    $Map = new FusionCharts("maps/worldwithcountries", "MyFirstMap" , "1300", "700", "map-container", "json", (string) $mapConfig);
     $Map->render();
     ?>
     <center>

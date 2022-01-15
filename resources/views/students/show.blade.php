@@ -25,7 +25,6 @@
                     <td>{{ $address['id'] }}</td>
                     <td>{{ $address['country_id'] }}</td>
                     <td>{{ $address['current_address'] == 1 ? 'True' : 'False' }}</td>
-                    
                 </tr>
             @endforeach
             </tbody>

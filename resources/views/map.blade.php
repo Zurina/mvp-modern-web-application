@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>FusionCharts | My First Map</title>
+  <title>The International Map</title>
 
   <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
   <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.maps.js"></script>
@@ -13,29 +13,10 @@
 <body>
   <x-map-layout mapConfig={!!$mapConfig!!} />
 
-  <?php if ($countryName != null) { ?>
+  @if($countryName != null && $students != null)         
     <h1>{{$countryName}}</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>More details</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($students as $student)
-        <tr>
-          <td>{{ $student['id'] }}</td>
-          <td>{{ $student['name'] }}</td>
-          <td>{{ $student['email'] }}</td>
-          <td><a class="a-button" href="{{ URL::to('students/' . $student['id']) }}">More details</a></td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  <?php } ?>
+    <x-students-table :students=$students />
+  @endif
 </body>
 
 </html>
