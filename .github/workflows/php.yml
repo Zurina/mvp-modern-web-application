@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Laravel
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
