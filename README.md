@@ -21,7 +21,7 @@ Switch to the repo folder
 
     cd mvp-modern-web-application
     
-Add sail as a alias
+Add sail as an alias
 
     Linux: alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
