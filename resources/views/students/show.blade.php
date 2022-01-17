@@ -1,13 +1,10 @@
 <x-app-layout>
     <div>
-        <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Dashboard') }}
-            </h2>
-        </x-slot>
         <div>
-            <h1>{{$student->name}}</h1>
-            <strong>{{$student->email}}</strong>
+            @if( Auth::id() == $student->id )
+                <h1>Welcome to your own page! You can configure your details here..</h2> 
+            @endif
+            <h3>{{$student->name}}, {{$student->email}}</h1>
         </div>
         <table>
             <thead>
