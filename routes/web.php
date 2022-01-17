@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 
 Route::get('/temp', function () {
     return view('welcome');
@@ -14,7 +15,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', '\App\Http\Controllers\MapController@map');
+Route::get('/', '\App\Http\Controllers\MapController@map')->name('/');;
 
 # BOOK CONTROLLER
 Route::resource('students', 'App\Http\Controllers\StudentController');

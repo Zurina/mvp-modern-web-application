@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Address;
+use App\Models\Country;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -20,7 +22,8 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $countries = Country::All();
+        return view('auth.register', compact('countries'));
     }
 
     /**
@@ -44,8 +47,14 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+        $address = Address::create([
+            'user_id' => $user->id,
+            'country_id' => $request->country_id,
+            'current_address' => true,
+        ]);
+        
         event(new Registered($user));
+        event(new Registered($address));
 
         Auth::login($user);
 

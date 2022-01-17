@@ -1,25 +1,15 @@
-<html>
+<x-app-layout>
+  <div>
+    <x-slot name="header">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Dashboard') }}
+      </h2>
+    </x-slot>
+    <x-map-layout mapConfig={!!$mapConfig!!} />
 
-<head>
-  <title>The International Map</title>
-
-  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
-  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.maps.js"></script>
-  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/maps/fusioncharts.worldwithcountries.js"></script>
-  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-  <link rel="stylesheet" href="{{ URL::asset('main.css') }}">
-</head>
-
-<body>
-  <x-map-layout mapConfig={!!$mapConfig!!} />
-  <div style="text-align: center;">
-    <a href="/students">See all students</a>
-  </div>
-  
-  @if($countryName != null && $students != null)         
+    @if($countryName != null && $students != null)
     <h1>{{$countryName}}</h1>
     <x-students-table :students=$students />
-  @endif
-</body>
-
-</html>
+    @endif
+  </div>
+</x-app-layout>
