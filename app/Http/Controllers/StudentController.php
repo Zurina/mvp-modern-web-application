@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use View;
 
@@ -49,7 +50,8 @@ class StudentController extends Controller
     public function show($id)
     {
         $student = User::with("addresses")->find($id);
-        return view("students.show", ["student" => $student]);
+        $countries = Country::All();
+        return view("students.show", compact('student', 'countries'));
     }
 
     /**

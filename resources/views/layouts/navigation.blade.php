@@ -20,7 +20,7 @@
                     </x-nav-link>
                     @if( Auth::check() )
                     <x-nav-link :href="url('students/' . Auth::id())" :active="request()->routeIs('students.index')">
-                        See all students
+                        Account
                     </x-nav-link>
                     @endif
                 </div>

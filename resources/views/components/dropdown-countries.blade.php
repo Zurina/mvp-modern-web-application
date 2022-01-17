@@ -1,5 +1,3 @@
-@props(['countries'])
-
 <div class="form-group">
     <label for="country_id" class="col-md-4 control-label">Select a country</label>
     <div class="col-md-6">

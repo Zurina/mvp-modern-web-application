@@ -15,10 +15,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', '\App\Http\Controllers\MapController@map')->name('/');;
+Route::get('/', '\App\Http\Controllers\MapController@map')->name('/');
 
-# BOOK CONTROLLER
 Route::resource('students', 'App\Http\Controllers\StudentController');
+
+Route::resource('addresses', 'App\Http\Controllers\AddressController');
 
 Route::get('test', function() {
     throw new \Exception("Mathias' awesome error");
