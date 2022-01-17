@@ -20,7 +20,6 @@ Route::get('/', '\App\Http\Controllers\MapController@map');
 Route::resource('students', 'App\Http\Controllers\StudentController');
 
 Route::get('test', function() {
-    // abort(500);
     throw new \Exception("Mathias' awesome error");
 });
 

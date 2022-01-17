@@ -4,11 +4,17 @@ The application displays a map of the world showing students' origin.
 
 This application is built with Laravel. 
 
+----------
+
 ## Expectations 
 
     - It is expected that your have Docker installed locally and ready to use from the terminal. 
 
 ----------
+
+## Error route
+
+    https://mathias.harbourspace.site/test
 
 ## Getting started
 
@@ -42,5 +48,3 @@ Run the application
     
     Attached mode: sail up
     Detached mode: sail up -d
-    
-    
