@@ -19,4 +19,8 @@ Route::get('/', '\App\Http\Controllers\MapController@map');
 # BOOK CONTROLLER
 Route::resource('students', 'App\Http\Controllers\StudentController');
 
+Route::get('test', function() {
+    abort(500);
+});
+
 require __DIR__.'/auth.php';
