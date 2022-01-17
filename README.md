@@ -2,7 +2,11 @@
 
 The application displays a map of the world showing students' origin.
 
-This application is built with Laravel. It expects you to already having installed Laravel locally and ready to use. 
+This application is built with Laravel. 
+
+## Expectations 
+
+    - It is expected that your have Docker installed locally and ready to use from the terminal. 
 
 ----------
 
