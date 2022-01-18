@@ -19,7 +19,7 @@
                         See all students
                     </x-nav-link>
                     @if( Auth::check() )
-                    <x-nav-link :href="url('students/' . Auth::id())" :active="request()->routeIs('students.index')">
+                    <x-nav-link :href="url('students/' . Auth::id())" :active="request()->routeIs('students.show')">
                         Account
                     </x-nav-link>
                     @endif
@@ -33,6 +33,8 @@
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                             @if( Auth::check())
                             <div>{{ Auth::user()->name }}</div>
+                            @else
+                            Guest
                             @endif
 
                             <div class="ml-1">
@@ -92,6 +94,8 @@
                 @if( Auth::check())
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                @else
+                Guest
                 @endif
             </div>
 

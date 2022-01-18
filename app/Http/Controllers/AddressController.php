@@ -42,7 +42,7 @@ class AddressController extends Controller
     public function store(Request $request)
     {
         $country_id = $request->country_id;
-        $current_address = $request->current_address == 'yes' ? True : False;
+        $current_address = $request->current_address == 'on' ? True : False;
 
         $address = Address::create([
             'user_id' => Auth::id(),
@@ -89,10 +89,10 @@ class AddressController extends Controller
     public function update(Request $request, Address $address)
     {
         $address->country_id      = $request->country_id;
-        $address->current_address = $request->current_address == 'yes' ? True : False;
+        $address->current_address = $request->current_address == 'on' ? True : False;
         $address->save();
 
-        return Redirect::to('/students/'.Auth::id());
+        return Redirect::to('/students/'.$address->user->id);
     }
 
     /**
