@@ -75,7 +75,8 @@ class AddressController extends Controller
      */
     public function edit(Address $address)
     {
-        //
+        $countries = Country::All();
+        return view('addresses.edit', compact('address', 'countries'));
     }
 
     /**
@@ -87,7 +88,11 @@ class AddressController extends Controller
      */
     public function update(Request $request, Address $address)
     {
-        //
+        $address->country_id      = $request->country_id;
+        $address->current_address = $request->current_address == 'yes' ? True : False;
+        $address->save();
+
+        return Redirect::to('/students/'.Auth::id());
     }
 
     /**
