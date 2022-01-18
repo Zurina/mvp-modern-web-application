@@ -48,3 +48,7 @@ Run the application
     
     Attached mode: sail up
     Detached mode: sail up -d
+    
+Seed data
+
+    sail artisan migrate:fresh --seed
