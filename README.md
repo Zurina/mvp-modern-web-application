@@ -6,6 +6,16 @@ This application is built with Laravel.
 
 ----------
 
+## Website
+
+https://mathias.harbourspace.site
+    
+Go to the website
+
+    Register by clicking on the icon next to 'Guest'
+    
+You should now be able to see your user on the map.
+
 ## Expectations 
 
     - It is expected that your have Docker installed locally and ready to use from the terminal. 
@@ -48,3 +58,7 @@ Run the application
     
     Attached mode: sail up
     Detached mode: sail up -d
+    
+Seed data
+
+    sail artisan migrate:fresh --seed
