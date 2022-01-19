@@ -12,7 +12,7 @@ https://mathias.harbourspace.site
     
 Go to the website
 
-    Register by clicked on the icon next to 'Guest'
+    Register by clicking on the icon next to 'Guest'
     
 You should now be able to see your user on the map.
 
