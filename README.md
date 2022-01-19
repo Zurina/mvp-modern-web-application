@@ -8,7 +8,7 @@ This application is built with Laravel.
 
 ## Website
 
-    - https://mathias.harbourspace.site
+https://mathias.harbourspace.site
     
 Go to the website
 
