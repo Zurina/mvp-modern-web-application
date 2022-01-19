@@ -18,9 +18,14 @@
                     <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.index')">
                         See all students
                     </x-nav-link>
-                    @if( Auth::check() )
+                    @if( auth()->check() )
                     <x-nav-link :href="url('students/' . Auth::id())" :active="request()->routeIs('students.show')">
                         Account
+                    </x-nav-link>
+                    @endif
+                    @if( auth()->check() && auth()->user()->is_admin )
+                    <x-nav-link :href="url('admin')" :active="request()->routeIs('admin')">
+                        Admin page
                     </x-nav-link>
                     @endif
                 </div>

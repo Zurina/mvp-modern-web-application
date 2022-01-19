@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Redirect;
 
 Route::get('/temp', function () {
     return view('welcome');
@@ -23,6 +22,10 @@ Route::resource('addresses', 'App\Http\Controllers\AddressController');
 
 Route::get('test', function() {
     throw new \Exception("Mathias' awesome error");
+});
+
+Route::middleware('isUserAdmin')->group(function () {
+    Route::get('admin', \App\Http\Controllers\AdminController::class)->name('admin');
 });
 
 require __DIR__.'/auth.php';

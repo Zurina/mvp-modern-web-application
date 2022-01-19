@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Country;
 use Illuminate\Http\Request;
-use View;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class StudentController extends Controller
 {
@@ -18,7 +19,6 @@ class StudentController extends Controller
     {
         $students = User::All();
         return view("students.index", ["students" => $students]);
-
     }
     /**
      * Show the form for creating a new resource.
@@ -85,6 +85,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        Session::flash('message', 'Successfully deleted user');
+        return Redirect::to(url()->previous());
     }
 }

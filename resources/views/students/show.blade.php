@@ -26,15 +26,15 @@
                     <td>{{ $address->country->shortLabel }}</td>
                     <td>{{ $address->country->label }}</td>
                     <td>{{ $address['current_address'] == 1 ? 'True' : 'False' }}</td>
-                    <td>
                     @if( Auth::id() == $student->id )
-                        <a class="a-button" href="{{ route('addresses.edit', ['address' => $address]) }}">Edit this address</a>
-                        <form method="POST" action="{{ route('addresses.destroy', ['address' => $address]) }}">
-                            @csrf
-                            @method('delete')
-                            <x-input type="submit" value="Delete this address" onclick="return confirm('Are you sure you want to delete this address?')"/>
-                        </form>
-                    </td>
+                        <td>
+                            <a class="a-button" href="{{ route('addresses.edit', ['address' => $address]) }}">Edit this address</a>
+                            <form method="POST" action="{{ route('addresses.destroy', ['address' => $address]) }}">
+                                @csrf
+                                @method('delete')
+                                <x-input type="submit" value="Delete this address" onclick="return confirm('Are you sure you want to delete this address?')"/>
+                            </form>
+                        </td>
                     @endif
                 </tr>
                 @endforeach
