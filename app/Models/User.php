@@ -50,11 +50,10 @@ class User extends Authenticatable
 
     public static function boot() {
         parent::boot();
-        self::deleting(function($user) { // before delete() method call this
+        self::deleting(function($user) {
              $user->addresses()->each(function($address) {
-                $address->delete(); // <-- direct deletion
+                $address->delete();
              });
-             // do the rest of the cleanup...
         });
     }
 }
