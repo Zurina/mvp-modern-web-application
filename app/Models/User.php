@@ -47,4 +47,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class);
     }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($user) { // before delete() method call this
+             $user->addresses()->each(function($address) {
+                $address->delete(); // <-- direct deletion
+             });
+             // do the rest of the cleanup...
+        });
+    }
 }
