@@ -6,6 +6,7 @@
                 <x-create-address :countries="$countries" />
             @endif
             <h3>{{$student->name}}, {{$student->email}}</h3>
+            <a class="a-button" href="{{ route('personalMap', ['id' => $student->id]) }}">Show personal map</a>
         </div>
         <table>
             <thead>

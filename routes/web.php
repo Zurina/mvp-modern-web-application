@@ -14,10 +14,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', '\App\Http\Controllers\MapController@map')->name('/');
+Route::get('/', '\App\Http\Controllers\MapController@indexMap')->name('/');
+Route::get('/personalMap/{id}', '\App\Http\Controllers\MapController@personalMap')->name('personalMap');
 
 Route::resource('students', 'App\Http\Controllers\StudentController');
-
 Route::resource('addresses', 'App\Http\Controllers\AddressController');
 
 Route::get('test', function() {
