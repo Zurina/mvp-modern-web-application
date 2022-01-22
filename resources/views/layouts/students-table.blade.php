@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <th>Profile Image</th>
+            <th width="30%">Avatar</th>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
