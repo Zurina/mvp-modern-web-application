@@ -44,6 +44,10 @@ class AddressController extends Controller
         $country_id = $request->country_id;
         $current_address = $request->current_address == 'on' ? True : False;
 
+        if ($current_address) {
+            Address::where('user_id', Auth::id())->update(['current_address' => False]);
+        }
+
         $address = Address::create([
             'user_id' => Auth::id(),
             'country_id' => $country_id,
@@ -88,7 +92,7 @@ class AddressController extends Controller
      */
     public function update(Request $request, Address $address)
     {
-        $address->country_id      = $request->country_id;
+        $address->country_id = $request->country_id;
         $address->current_address = $request->current_address == 'on' ? True : False;
         $address->save();
 
