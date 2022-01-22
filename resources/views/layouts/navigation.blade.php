@@ -60,15 +60,23 @@
                                             this.closest('form').submit()">
                                 {{ __('Log Out') }}
                             </x-responsive-nav-link>
-                            @else
-                            <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
-                                Log In
-                            </x-nav-link>
-                            <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
-                                Register
-                            </x-nav-link>
-                            @endif
                         </form>
+                            @else
+                            <form method="GET" action="{{ route('login') }}">
+                                @csrf
+                                <x-responsive-nav-link :href="route('login')" onclick="event.preventDefault();
+                                                this.closest('form').submit()">
+                                    {{ __('Log in') }}
+                                </x-responsive-nav-link>
+                            </form>
+                            <form method="GET" action="{{ route('register') }}">
+                                @csrf
+                                <x-responsive-nav-link :href="route('register')" onclick="event.preventDefault();
+                                                this.closest('form').submit()">
+                                    {{ __('Register') }}
+                                </x-responsive-nav-link>
+                            </form>
+                            @endif
                     </x-slot>
                 </x-dropdown>
             </div>
