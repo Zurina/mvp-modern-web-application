@@ -47,6 +47,11 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
+            $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
+        }
+
         $address = Address::create([
             'user_id' => $user->id,
             'country_id' => $request->country_id,

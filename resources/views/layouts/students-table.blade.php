@@ -1,6 +1,7 @@
 <table>
     <thead>
         <tr>
+            <th>Profile Image</th>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
@@ -15,6 +16,7 @@
     <tbody>
         @foreach($students as $student)
         <tr>
+            <td><img src="{{$student->getFirstMediaUrl('avatar', 'thumb')}}" / width="120px"></td>
             <td>{{ $student['id'] }}</td>
             <td>{{ $student['name'] }}</td>
             <td>{{ $student['email'] }}</td>
