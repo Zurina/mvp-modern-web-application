@@ -45,14 +45,22 @@ Add sail as an alias
 
     Linux: alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
-Install all the dependencies using composer
+Install dependencies through Docker if you don't have php or composer installed locally:
 
-    With alias: sail composer install
-    Without alias: ./vendor/bin/sail composer install
+    docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    composer install --ignore-platform-reqs
 
-Copy the example env file and make the required configuration changes in the .env file
+Copy the example env file and set application name, application url and database parameters.
 
     cp .env.example .env
+
+Set the application key
+
+    sail artisan key:generate
 
 Run the application
     
