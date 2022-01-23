@@ -4,6 +4,7 @@
             @if( Auth::id() == $student->id )
             <h1>Welcome to your own page! You can configure your details here..</h1>
                 <x-create-address :countries="$countries" />
+                <a class="a-button" href="{{ route('students.edit', ['student' => $student->id]) }}">Edit this user</a>
             @endif
             <h3>{{$student->name}}, {{$student->email}}</h3>
             <a class="a-button" href="{{ route('personalMap', ['id' => $student->id]) }}">Show personal map</a>

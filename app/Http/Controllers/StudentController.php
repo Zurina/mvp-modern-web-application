@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Country;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class StudentController extends Controller
 {
@@ -62,7 +65,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = User::find($id);
+        return view("students.edit", compact('student'));
     }
 
     /**
@@ -74,7 +78,27 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = User::find($id);
+        
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        
+        if($request->hasFile('avatar') && $request->file('avatar')->isValid()){
+            $user->deleteMedia($user->media->last()->id);
+            $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
+        }
+
+        $user->save();
+
+        $students = User::All();
+        return view("students.index", ["students" => $students]);
     }
 
     /**
