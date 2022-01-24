@@ -9,13 +9,14 @@
         "alexpechkarev/google-maps": "^8.0",
         "facade/ignition": "^2.17",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.0",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
         "spatie/laravel-honeypot": "^4.1",
-        "spatie/laravel-medialibrary": "^9.6.0"
+        "spatie/laravel-medialibrary": "^9.6.0",
+        "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

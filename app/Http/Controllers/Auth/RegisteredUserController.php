@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Notifications\HelloUserEmail;
 
 class RegisteredUserController extends Controller
 {
@@ -58,8 +59,11 @@ class RegisteredUserController extends Controller
             'current_address' => true,
         ]);
         
+        $user->notify(new HelloUserEmail());
+        
         event(new Registered($user));
         event(new Registered($address));
+
 
         Auth::login($user);
 
