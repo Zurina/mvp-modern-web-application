@@ -109,6 +109,10 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
+
+        if (!auth()->check() || !auth()->user()->is_admin) {
+            return Redirect::to(url()->previous())->withErrors(['errors' => 'Not allowed']);
+        }
         $user = User::findOrFail($id);
         $user->delete();
         Session::flash('message', 'Successfully deleted user');
