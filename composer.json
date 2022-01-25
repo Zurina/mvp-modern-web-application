@@ -14,10 +14,13 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
+        "spatie/cpu-load-health-check": "^1.0",
         "spatie/db-dumper": "^3.1",
         "spatie/laravel-backup": "^7.3.3",
+        "spatie/laravel-health": "^1.7",
         "spatie/laravel-honeypot": "^4.1",
         "spatie/laravel-medialibrary": "^9.6.0",
+        "victord11/ssl-certification-health-check": "^1.0",
         "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {
