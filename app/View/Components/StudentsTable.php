@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class StudentsTable extends Component
 {
     public $students;
+
     /**
      * Create a new component instance.
      *
@@ -16,7 +17,6 @@ class StudentsTable extends Component
     {
         $this->students = $students ?? null;
     }
-
 
     /**
      * Get the view / contents that represent the component.

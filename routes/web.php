@@ -1,7 +1,7 @@
 <?php
 
-use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 Route::get('/temp', function () {
     return view('welcome');
@@ -21,14 +21,13 @@ Route::get('/personalMap/{id}', '\App\Http\Controllers\MapController@personalMap
 Route::resource('students', 'App\Http\Controllers\StudentController');
 Route::resource('addresses', 'App\Http\Controllers\AddressController');
 
-Route::get('test', function() {
+Route::get('test', function () {
     throw new \Exception("Mathias' awesome error");
 });
 
 Route::middleware('isUserAdmin')->group(function () {
     Route::get('admin', \App\Http\Controllers\AdminController::class)->name('admin');
 });
-
 
 Route::get('health', HealthCheckResultsController::class);
 

@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 class CreateAddress extends Component
 {
     public $countries;
-    
+
     public function __construct($countries = null)
     {
         $this->countries = $countries ?? null;
