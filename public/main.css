@@ -80,6 +80,20 @@ table .a-button {
     text-decoration: none;
 }
 
+.link-button {
+    padding: 5px 15px;
+    background: rgb(175, 175, 175);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: inline-block;
+    width: 175px;
+}
+
+.subsection-header {
+    font-size: 24px;
+}
+
 table .highlight-sorting-column {
     background: rgb(75, 255, 99);
 }
