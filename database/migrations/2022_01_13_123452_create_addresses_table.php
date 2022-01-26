@@ -15,9 +15,9 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id");
-            $table->foreignId("country_id");
-            $table->boolean("current_address");
+            $table->foreignId('user_id');
+            $table->foreignId('country_id');
+            $table->boolean('current_address');
             $table->timestamps();
         });
     }

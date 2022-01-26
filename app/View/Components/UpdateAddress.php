@@ -8,7 +8,7 @@ class UpdateAddress extends Component
 {
     public $countries;
     public $address;
-    
+
     public function __construct($countries = null, $address = null)
     {
         $this->countries = $countries ?? null;
