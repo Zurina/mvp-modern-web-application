@@ -100,6 +100,10 @@ class StudentController extends Controller
                 ->withInput($request->except('password'));
         }
 
+        if (!auth()->check() || auth()->user()->id != $id) {
+            return Redirect::to(url()->previous())->withErrors(['errors' => 'Not allowed']);
+        }
+
         $user = User::findOrFail($id);
 
         $user->name = $request->name;
