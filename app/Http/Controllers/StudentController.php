@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
@@ -78,13 +79,21 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $rules = array(
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        );
 
-        $user = User::find($id);
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::to(url()->previous())
+                ->withErrors($validator)
+                ->withInput($request->except('password'));
+        }
+
+        $user = User::findOrFail($id);
         
         $user->name = $request->name;
         $user->email = $request->email;
@@ -109,7 +118,6 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-
         if (!auth()->check() || !auth()->user()->is_admin) {
             return Redirect::to(url()->previous())->withErrors(['errors' => 'Not allowed']);
         }
