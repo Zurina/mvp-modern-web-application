@@ -6,6 +6,12 @@ This application is built with Laravel.
 
 ----------
 
+[Website](#website)
+[Expectations](#expectations)
+[Server Monitoring](#server-monitoring)
+[Error route](#error-route)
+[Getting started](#getting-started)
+
 ## Website
 
 https://mathias.harbourspace.site
@@ -16,15 +22,14 @@ Go to the website
     
 You should now be able to see your user on the map.
 
-## Server monitoring
-
-https://mathias.harbourspace.site/health
 
 ## Expectations 
 
     - It is expected that your have Docker installed locally and ready to use from the terminal. 
 
-----------
+## Server monitoring
+
+https://mathias.harbourspace.site/health
 
 ## Error route
 
