@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Address;
+use Illuminate\Database\Seeder;
 
 class AddressSeeder extends Seeder
 {
@@ -16,10 +16,10 @@ class AddressSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        for($i = 1; $i < 101; $i++) {
+        for ($i = 1; $i < 101; $i++) {
             Address::create([
-                'user_id' => $i,
-                'country_id' => $faker->numberBetween(1, 244),
+                'user_id'         => $i,
+                'country_id'      => $faker->numberBetween(1, 244),
                 'current_address' => true,
             ]);
         }

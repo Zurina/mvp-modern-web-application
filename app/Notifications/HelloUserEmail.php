@@ -23,7 +23,7 @@ class HelloUserEmail extends Notification implements ShouldQueue
 
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new MailMessage())
                     ->subject('Registration at the International Map')
                     ->greeting('Hello International student '.$notifiable->name)
                     ->line('Thank you for joining my great website.');

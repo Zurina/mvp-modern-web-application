@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
-use App\Notifications\HelloUserEmail;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class User extends Authenticatable implements HasMedia
 {
-    use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
+    use InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -51,12 +52,13 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(Address::class);
     }
 
-    public static function boot() {
+    public static function boot()
+    {
         parent::boot();
-        self::deleting(function($user) {
-             $user->addresses()->each(function($address) {
+        self::deleting(function ($user) {
+            $user->addresses()->each(function ($address) {
                 $address->delete();
-             });
+            });
         });
     }
 }

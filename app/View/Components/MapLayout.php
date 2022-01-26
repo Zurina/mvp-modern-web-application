@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class MapLayout extends Component
 {
     public $mapConfig;
+
     /**
      * Create a new component instance.
      *
@@ -14,7 +15,7 @@ class MapLayout extends Component
      */
     public function __construct($mapConfig = null)
     {
-        $this->mapConfig = $mapConfig ?? "default value";
+        $this->mapConfig = $mapConfig ?? 'default value';
     }
 
     /**
