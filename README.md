@@ -6,11 +6,11 @@ This application is built with Laravel.
 
 ----------
 
-[Website](#website)<br />
-[Expectations](#expectations)<br />
-[Server Monitoring](#server-monitoring)<br />
-[Error route](#error-route)<br />
-[Getting started](#getting-started)<br />
+- [Website](#website)<br />
+- [Expectations](#expectations)<br />
+- [Server Monitoring](#server-monitoring)<br />
+- [Error route](#error-route)<br />
+- [Getting started](#getting-started)<br />
 
 ## Website
 
