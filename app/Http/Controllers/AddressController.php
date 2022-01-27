@@ -97,7 +97,7 @@ class AddressController extends Controller
      */
     public function update(Request $request, Address $address)
     {
-        $country =  $request->country_id;
+        $country = $request->country_id;
         $current_address = $request->current_address == 'on' ? true : false;
         if ($current_address) {
             Address::where('user_id', Auth::id())->update(['current_address' => false]);
